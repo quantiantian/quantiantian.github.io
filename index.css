@@ -1,0 +1,106 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "微软雅黑";
+    box-sizing: border-box;
+    -webkit-user-select: none;
+}
+
+#container {
+    width: 100vw;
+    height: 100vh;
+    overflow-y: hidden;
+}
+
+#header {
+    background-color: #C4E1FF;
+    height: 90px;
+    width: 100%;
+    float: left;
+}
+
+#content {
+    background-color: #97CBFF;
+    width: 100%;
+    height: calc(100% - 140px);
+    float: left;
+}
+
+#footer {
+    background-color: #C4E1FF;
+    height: 50px;
+    width: 100%;
+    float: left;
+    line-height: 50px;
+    padding: 0 10px;
+    font-size: 30px;
+}
+
+#header h1 {
+    text-align: center;
+    margin-top: 8px;
+}
+
+#content ul,
+#content li {
+    list-style: none;
+}
+
+#content li {
+    width: 100%;
+    height: 60px;
+    padding: 0px 10px;
+    line-height: 60px;
+    font-size: 32px;
+    border-bottom: dashed 1px #000;
+}
+
+.add {
+    float: left;
+    padding: 5px;
+    display: inline-block;
+    color: #000;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.edit {
+    float: right;
+    padding: 5px;
+}
+
+.search {
+    padding: 5px;
+    display: inline-block;
+    float: right;
+    color: #000;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.search input,
+.add input {
+    font-size: 20px;
+    border: none;
+    border-bottom: 1px solid #f00;
+    background: none;
+    outline: medium;
+    padding-left: 10px;
+}
+
+.status {
+    float: right;
+    margin-right: 10px;
+}
+
+.btn-container {
+    float: right;
+}
+
+.btn-container a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+}

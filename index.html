@@ -1,0 +1,49 @@
+<!--TODO MVC实现效果：
+>包含一个文本框，回车添加一条TODO
+>包含一个TODO列表，支持复选框批量选中，允许全选操作
+>包含一个搜索框，按搜索内容对TODO列表进行过滤
+>每个TODO末尾都可以执行完成，删除操作
+>批量选中时，允许对选中项批量完成，删除。-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>TODO</title>
+    <script data-main="main" src="scripts/lib/require.js"></script>
+    <link rel="stylesheet" type="text/css" href="index.css" />
+    <link rel="stylesheet" type="text/css" href="style.css" />
+</head>
+
+<body>
+    <div id="container" ng-controller="myController">
+        <div id="header">
+            <h1>Todo List</h1>
+            <span class="icon-plus add"> <input type="text" name="todo"  ng-model="text"  ng-keyup="myKeyup($event)"></span>
+            <span class="icon-search search"><input type="text" name="search" ng-model="query" ng-click="filter()"></span>
+        </div>
+        <hr>
+        <div id="content">
+            <ul>
+                <li ng-repeat="it in list|textFilter:query">
+                    <input type="checkbox" ng-show="myVar" ng-model="it.chk" ng-click="check()" ng-checked="it.chk" />
+                    <span class="text">{{ it.text}}</span>
+                    <span class="btn-container">
+                    <a class="icon-checkmark" ng-show="myVar" ng-click="finish(it)"></a>
+                    <a class="icon-bin" ng-show="myVar" ng-click="delete(it)"></a> 
+                    </span>
+                    <span class="status">{{it.status}}</span>
+                </li>
+            </ul>
+        </div>
+        <div id="footer">
+            <a class="icon-pencil2 edit fr" ng-click="toggle()"></a>
+            <input type="checkbox" ng-model="all" ng-show="myVar" ng-click="chkAll()">
+            <a ng-show="myVar">全选</a>
+            <a class="icon-checkmark " ng-show="myVar " ng-click="finishMore() "></a>
+            <a class="icon-bin " ng-show="myVar " ng-click="deleteMore() "></a>
+        </div>
+    </div>
+</body>
+
+</html>
